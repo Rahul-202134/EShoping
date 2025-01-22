@@ -46,7 +46,7 @@ export default function Login() {
       <div className="container pb-4">
         <div className='row justify-content-center'>
           <div className='col-lg-4'>
-          <h2 className='form'>Login Here</h2>
+            <h2 className='form'>Login Here</h2>
             <div className="box rounded">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">

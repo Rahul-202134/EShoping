@@ -1,10 +1,23 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import sample from '../components/Assets/sample'; // Ensure this imports correctly
 
 export const ShopContext = createContext(null);
 
 const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState([]); // State for cart items
+    // Initialize cartItems state from localStorage or default to an empty array
+    const [cartItems, setCartItems] = useState(() => {
+        const storedCart = localStorage.getItem('cartItems');
+        return storedCart ? JSON.parse(storedCart) : [];
+    });
+
+    // Save cart items to localStorage whenever the cartItems state changes
+    useEffect(() => {
+        if (cartItems.length > 0) {
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        } else {
+            localStorage.removeItem('cartItems');
+        }
+    }, [cartItems]);
 
     const addToCart = (productId) => {
         setCartItems((prevItems) => {
@@ -38,10 +51,11 @@ const ShopContextProvider = (props) => {
     const contextValue = {
         sample,
         addToCart,
+        removeFromCart,
         cartItems,
-        cartCount: cartItems.reduce((total, item) => total + item.quantity, 0) // Calculate total items in cart
+        cartCount: cartItems.reduce((total, item) => total + item.quantity, 0), // Calculate total items in cart
+        getTotalPrice,
     };
-
 
     return (
         <ShopContext.Provider value={contextValue}>
