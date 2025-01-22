@@ -35,13 +35,13 @@ const ShopContextProvider = (props) => {
         }, 0);
     };
 
-    const contextValue = { 
-        sample, 
-        addToCart, 
-        cartItems, 
+    const contextValue = {
+        sample,
+        addToCart,
+        cartItems,
         cartCount: cartItems.reduce((total, item) => total + item.quantity, 0) // Calculate total items in cart
-    }; 
-    
+    };
+
 
     return (
         <ShopContext.Provider value={contextValue}>
