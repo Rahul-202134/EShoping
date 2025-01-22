@@ -36,11 +36,11 @@ export default function Signup() {
 
   return (
     <>
-      <div className="container">
+      <div className="container pb-4">
         <div className="row justify-content-center">
           <h2 className='form'>Resister Here</h2>
           <div className="col-lg-5">
-            <div className="box">
+            <div className="box rounded">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">

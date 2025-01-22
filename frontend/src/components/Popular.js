@@ -10,7 +10,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <div className='container-heading'>
+      <div className='container container-heading'>
         <h2>Popular In Women</h2>
       </div>
       <div className="product-list">

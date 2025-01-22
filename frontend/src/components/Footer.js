@@ -5,37 +5,63 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section about">
-          <h2 className="footer-title">About Us</h2>
-          <p>🅴🆂🅷🅾🅿🅸🅽🅶</p>
-          <p>
-            We are an e-commerce company committed to delivering the best products to your doorstep.
-          </p>
-        </div>
-        <div className="footer-section links">
-          <h2 className="footer-title">Useful Links</h2>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/faq">FAQs</a></li>
-          </ul>
-        </div>
-        <div className="footer-section contact">
-          <h2 className="footer-title">Contact Us</h2>
-          <p><FontAwesomeIcon icon={faEnvelope} /> rahulkumar202134@gmail.com</p>
-          <p><FontAwesomeIcon icon={faPhone} /> +91 9536741161</p>
-          <div className="social-icons">
-            <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
-            <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-            <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+    <footer className="bg-dark  text-light">
+      <div className="container pt-4">
+        <div className="row">
+          {/* About Section */}
+          <div className="col-md-3 mb-4">
+            <h5 className="text-uppercase">About Us</h5>
+            <p>🅴🆂🅷🅾🅿🅸🅽🅶</p>
+            <p>
+              We are an e-commerce company committed to delivering the best products to your doorstep.
+            </p>
+          </div>
+
+          {/* Links Section */}
+          <div className="col-md-3 mb-4">
+            <h5 className="text-uppercase">Useful Links</h5>
+            <ul className="list-unstyled">
+              <li><a href="/" className="text-light text-decoration-none">Home</a></li>
+              <li><a href="/shop" className="text-light text-decoration-none">Shop</a></li>
+              <li><a href="/contact" className="text-light text-decoration-none">Contact</a></li>
+              <li><a href="/faq" className="text-light text-decoration-none">FAQs</a></li>
+            </ul>
+          </div>
+
+          {/* Contact Section */}
+          <div className="col-md-3 mb-4">
+            <h5 className="text-uppercase">Contact Us</h5>
+            <p><FontAwesomeIcon icon={faEnvelope} /> rahulkumar202134@gmail.com</p>
+            <p><FontAwesomeIcon icon={faPhone} /> +91 9536741161</p>
+            <div>
+              <a href="#" className="text-light me-3"><FontAwesomeIcon icon={faFacebook} /></a>
+              <a href="#" className="text-light me-3"><FontAwesomeIcon icon={faTwitter} /></a>
+              <a href="#" className="text-light"><FontAwesomeIcon icon={faInstagram} /></a>
+            </div>
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="col-md-3 mb-4">
+            <h5 className="text-uppercase">Newsletter</h5>
+            <p>Subscribe to get the latest updates and offers:</p>
+            <form>
+              <div className="mb-2">
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  aria-label="Email"
+                />
+              </div>
+              <button type="submit" className="btn btn-primary btn-sm w-100">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>&copy; 2024 E-Commerce | All rights reserved.</p>
+      <div className="bg-secondary text-center py-3">
+        <p className="mb-0">&copy; 2024 E-Commerce | All rights reserved.</p>
       </div>
     </footer>
   );

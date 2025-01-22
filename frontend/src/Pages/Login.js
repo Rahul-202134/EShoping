@@ -43,11 +43,11 @@ export default function Login() {
 
   return (
     <>
-      <div className="container">
+      <div className="container pb-4">
         <div className='row justify-content-center'>
           <div className='col-lg-4'>
           <h2 className='form'>Login Here</h2>
-            <div className="box">
+            <div className="box rounded">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">
